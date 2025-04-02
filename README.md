@@ -1,73 +1,54 @@
-# Vite + React Template
+# Profile App
 
-This repository is a **template repository** for building React applications using Vite. It includes a simple counter example and links to learn more about Vite and React.
+This is a simple profile app that displays user information extracted from a JWT token. It uses React, Vite, and the `jose` library for JWT verification.
 
-## Features
+## Prerequisites
 
-- **Vite**: Fast and modern build tool.
-- **React**: A JavaScript library for building user interfaces.
-- **Tailwind CSS**: Utility-first CSS framework for styling.
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- [pnpm](https://pnpm.io/) (v7 or higher)
 
 ## Getting Started
-
-### Prerequisites
-
-Make sure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (version 16 or higher)
-- [pnpm](https://pnpm.io/)
-
-### Using This Template
-
-1. Click the "Use this template" button on the repository page.
-2. Create a new repository from this template.
-
-### Installation
 
 1. Clone the repository:
 
    ```bash
    git clone <repository-url>
-   cd template
+   cd profile
    ```
 
-2. Install dependencies:
+2. Install dependencies using `pnpm`:
 
    ```bash
    pnpm install
    ```
 
-### Development
+3. Create a `.env` file in the root directory and add the following environment variable:
 
-Start the development server:
+   ```env
+   VITE_PUBLIC_KEY=<your-public-key>
+   ```
 
-```bash
-pnpm dev
-```
+   Replace `<your-public-key>` with your actual public key in SPKI format (base64-encoded).
 
-Open your browser and navigate to `http://localhost:5173`.
+4. Start the development server:
 
-### Build
+   ```bash
+   pnpm dev
+   ```
 
-To create a production build:
+5. Open the app in your browser at [http://localhost:5173](http://localhost:5173).
 
-```bash
-pnpm build
-```
+## Scripts
 
-### Preview
+- `pnpm dev`: Start the development server.
+- `pnpm build`: Build the app for production.
+- `pnpm preview`: Preview the production build locally.
 
-To preview the production build locally:
+## Features
 
-```bash
-pnpm preview
-```
-
-## Learn More
-
-- [Vite Documentation](https://vite.dev)
-- [React Documentation](https://react.dev)
-- [Tailwind CSS Documentation](https://tailwindcss.com)
+- Displays user profile information extracted from a JWT token.
+- Verifies the JWT using a public key in SPKI format.
+- Includes a logout button that clears the token and redirects to `/auth`.
 
 ## License
 
