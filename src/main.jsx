@@ -28,30 +28,29 @@ function App() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
-      <nav className="w-full bg-muted p-4 shadow-sm fixed top-0 left-0">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 text-gray-800">
+      <nav className="w-full bg-white border-b border-gray-200 py-2 px-4 fixed top-0 left-0 shadow-sm">
         <div className="container mx-auto flex justify-between items-center">
           <button
-            className="px-4 py-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary/50"
+            className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
             onClick={() => (window.location.href = "/")}
           >
             Home
           </button>
         </div>
       </nav>
-      <div className="mt-20">
-        {" "}
-        {/* Add margin to avoid overlap with fixed navbar */}
-        <h1 className="text-4xl font-semibold mt-8">User Profile</h1>
+      <div className="mt-24 w-full max-w-lg px-6">
+        <h1 className="text-2xl font-semibold text-center">User Profile</h1>
         {user ? (
-          <div className="mt-6 p-6 bg-card rounded-lg shadow-md text-card-foreground">
+          <div className="mt-6 p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
             {Object.entries(user).map(([key, value]) => (
-              <p key={key} className="text-sm">
-                <strong className="capitalize">{key}:</strong> {String(value)}
+              <p key={key} className="text-sm mb-2">
+                <strong className="capitalize font-medium">{key}:</strong>{" "}
+                {String(value)}
               </p>
             ))}
             <button
-              className="mt-4 px-4 py-2 bg-destructive text-destructive-foreground rounded-md hover:bg-destructive/90 focus:outline-none focus:ring-2 focus:ring-destructive/50"
+              className="mt-4 w-full px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400"
               onClick={() => {
                 localStorage.removeItem("token");
                 setUser(null);
@@ -62,7 +61,7 @@ function App() {
             </button>
           </div>
         ) : (
-          <p className="mt-6 text-muted-foreground text-sm">
+          <p className="mt-6 text-center text-gray-500 text-sm">
             No user information available.
           </p>
         )}
