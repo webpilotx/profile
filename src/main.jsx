@@ -7,6 +7,8 @@ function App() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    console.log(`VITE_PUBLIC_KEY:\n${import.meta.env.VITE_PUBLIC_KEY}`); // Log VITE_PUBLIC_KEY with potential newlines
+
     async function verifyToken() {
       const token = localStorage.getItem("token");
       if (!token) return;
