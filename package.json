@@ -1,16 +1,11 @@
 {
-  "name": "template",
+  "name": "profile",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nodemon server.js",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "dev": "vite dev",
+    "build": "vite build"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.1",
@@ -21,14 +16,9 @@
     "express": "^5.1.0",
     "globals": "^15.15.0",
     "jose": "^6.0.10",
-    "nodemon": "^3.1.9",
     "tailwindcss": "^4.1.1",
     "vite": "^6.2.0",
-    "vite-express": "^0.20.0"
-  },
-  "nodemonConfig": {
-    "watch": [
-      "index.js"
-    ]
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   }
 }

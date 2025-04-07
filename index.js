@@ -1,11 +1,8 @@
 import "dotenv/config";
-import express from "express";
-import ViteExpress from "vite-express";
-
-const app = express();
+import api from "./api.js";
 
 const PORT = process.env.PORT || 3000;
 
-ViteExpress.listen(app, PORT, () =>
-  console.log(`Server is listening on port ${PORT}...`)
-);
+api.listen(PORT, () => {
+  console.log(`API server is running on port ${PORT}`);
+});
